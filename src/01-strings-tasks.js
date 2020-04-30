@@ -204,18 +204,12 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  const w = width;
-  const h = height;
-  const startLine = function () {
-    return `┌${repeatString('─', w - 2)}┐\n`;
-  };
-  const endLine = function () {
-    return `└${repeatString('─', w - 2)}┘\n`;
-  };
-  const middleLine = function () {
-    return `│${repeatString(' ', w - 2)}│\n`;
-  };
-  return startLine() + repeatString(middleLine(), h - 2) + endLine();
+  // const w = width;
+  // const h = height;
+  const startLine = `┌${repeatString('─', width - 2)}┐\n`;
+  const endLine = `└${repeatString('─', width - 2)}┘\n`;
+  const middleLine = repeatString(`│${repeatString(' ', width - 2)}│\n`, height - 2);
+  return startLine + middleLine + endLine;
 }
 
 
